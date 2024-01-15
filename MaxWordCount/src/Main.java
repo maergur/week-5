@@ -11,8 +11,9 @@ public class Main {
 
         String[] splitStr = str.split(" ");
 
-       LinkedHashMap<String, Integer> wordMap = new LinkedHashMap<>();
+        HashMap<String, Integer> wordMap = new HashMap<>();
 
+        // HashMap'i gezip aynı kelimeden kullanıldıysa 1 arttırıyoruz.
 
         for(String word : splitStr) {
             if (wordMap.containsKey(word)){
@@ -22,6 +23,8 @@ public class Main {
         }
 
         }
+
+        // Java dokümanlarını inceledikten sonra max value kısayolunu burada kopyalayarak kullandım.
 
         System.out.println("Yazıdaki en çok geçen kelime: " +
                 Collections.max(wordMap.entrySet(), Map.Entry.comparingByValue()).getKey() + "\nKullanım sayısı: " +
